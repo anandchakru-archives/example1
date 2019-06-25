@@ -1,10 +1,10 @@
 {
   "name": "ng8",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --port 4300",
+    "build": "ng build --prod --base-href 'https://anandchakru.github.io/nivite/example1/' && ngh",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
