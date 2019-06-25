@@ -8,6 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://nivite.github.io/sdk/dist/elements/styles.css">
 </head>
 
 <body>
@@ -26,7 +27,27 @@
     integrity="sha384-IwFbZvLB3nqmwJikzn6JZAqNDTwjFfauT4djixzjaxmR030Fd2gx05kWWwBLwRYZ"
     crossorigin="anonymous"></script>
 
-  <script src="https://github.com/nivite/sdk/releases/latest/download/nivite-sdk-es2015.js" type="module"></script>
+  <script src="https://nivite.github.io/sdk/dist/elements/nivite-sdk-es2015.js" type="module"></script>
+
+  <script type="javascript">
+    const nivite = document.getElementsByTagName('nivite-wrap')[0];
+    const httpReq = new XMLHttpRequest();
+    httpReq.open('GET', 'https://nivite.github.io/sdk/dist/elements/test/sample.json');
+    httpReq.send();
+    httpReq.onreadystatechange = (e) => {
+      console.log('json:' + httpReq.responseText);
+      nivite.setAttribute('invite', httpReq.responseText);
+
+      nivite.addEventListener('err', (msg) => {
+        console.log(msg);
+        // Handle errors here
+      }, false);
+      nivite.addEventListener('loaded', (invite) => {
+        console.log(invite);
+        // Use this invite  to render the page
+      }, false);
+    };
+  </script>
 </body>
 
 </html>

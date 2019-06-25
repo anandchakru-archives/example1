@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4300",
-    "build": "ng build --prod --base-href 'https://anandchakru.github.io/nivite/example1/' && ngh",
+    "build": "ng build --prod --base-href 'https://nivite.github.io/example1/' && ngh",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
