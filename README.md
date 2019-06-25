@@ -1,7 +1,5 @@
 # Ng8
-Demonstrates the use of [@nivite/sdk](https://github.com/nivite/sdk)
-
-For a quick demo, go to [gh-pages](http://anandchakru.github.io/nivite/example1)
+This example is to demonstrate the use of [@nivite/sdk](https://github.com/nivite/sdk). Demo @[gh-pages](http://nivite.github.io/example1)
 
 ## How to
 
