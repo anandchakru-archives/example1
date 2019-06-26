@@ -34,7 +34,7 @@
     httpReq.open('GET', 'https://nivite.github.io/sdk/dist/elements/test/sample.json');
     httpReq.send();
     httpReq.onreadystatechange = (e) => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
+      if (httpReq.readyState === 4 && httpReq.status === 200) {
         console.log('json:' + httpReq.responseText);
         nivite.setAttribute('invite-str', httpReq.responseText);
 
