@@ -34,17 +34,19 @@
     httpReq.open('GET', 'https://nivite.github.io/sdk/dist/elements/test/sample.json');
     httpReq.send();
     httpReq.onreadystatechange = (e) => {
-      console.log('json:' + httpReq.responseText);
-      nivite.setAttribute('invite-str', httpReq.responseText);
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log('json:' + httpReq.responseText);
+        nivite.setAttribute('invite-str', httpReq.responseText);
 
-      nivite.addEventListener('err', (msg) => {
-        console.log(msg);
-        // Handle errors here
-      }, false);
-      nivite.addEventListener('loaded', (invite) => {
-        console.log(invite);
-        // Use this invite  to render the page
-      }, false);
+        nivite.addEventListener('err', (msg) => {
+          console.log(msg);
+          // Handle errors here
+        }, false);
+        nivite.addEventListener('loaded', (invite) => {
+          console.log(invite);
+          // Use this invite  to render the page
+        }, false);
+      }
     };
   </script>
 <script src="runtime-es2015.858f8dd898b75fe86926.js" type="module"></script><script src="polyfills-es2015.5728f680576ca47e99fe.js" type="module"></script><script src="runtime-es5.741402d1d47331ce975c.js" nomodule></script><script src="polyfills-es5.405730e5ac8f727bd7d7.js" nomodule></script><script src="main-es2015.ebdec1ecd3d6bec70548.js" type="module"></script><script src="main-es5.d2aea040e18d429d3b8c.js" nomodule></script></body>
