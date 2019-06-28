@@ -29,7 +29,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@nivite/sdk/dist/main.js"
+            ]
           },
           "configurations": {
             "production": {

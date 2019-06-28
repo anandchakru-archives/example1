@@ -8,11 +8,11 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://nivite.github.io/sdk/dist/elements/styles.css">
+
 </head>
 
 <body>
-  <nivite-wrap></nivite-wrap>
+  <div id="nivite"></div>
   <nivite-root></nivite-root>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -27,27 +27,6 @@
     integrity="sha384-IwFbZvLB3nqmwJikzn6JZAqNDTwjFfauT4djixzjaxmR030Fd2gx05kWWwBLwRYZ"
     crossorigin="anonymous"></script>
 
-  <script src="https://nivite.github.io/sdk/dist/elements/nivite-sdk-es2015.js" type="module"></script>
-
-  <script>
-    const nivite = document.getElementsByTagName('nivite-wrap')[0];
-    const httpReq = new XMLHttpRequest();
-    httpReq.open('GET', 'https://nivite.github.io/sdk/dist/elements/test/sample.json');
-    httpReq.send();
-    httpReq.onreadystatechange = (e) => {
-      console.log('json:' + httpReq.responseText);
-      nivite.setAttribute('invite', httpReq.responseText);
-
-      nivite.addEventListener('err', (msg) => {
-        console.log(msg);
-        // Handle errors here
-      }, false);
-      nivite.addEventListener('loaded', (invite) => {
-        console.log(invite);
-        // Use this invite  to render the page
-      }, false);
-    };
-  </script>
 </body>
 
 </html>
